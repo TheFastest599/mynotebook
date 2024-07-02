@@ -36,7 +36,7 @@ function Login() {
       localStorage.setItem('name', json.name);
       localStorage.setItem('email', json.email);
       showAlert('Logged In Successfully', 'success');
-      navigate('/');
+      navigate('/content');
     } else {
       showAlert('Invalid credentials', 'danger');
     }

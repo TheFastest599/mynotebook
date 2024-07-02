@@ -6,7 +6,7 @@ import particlesOptions from '../assets/particlesjs-config.json';
 import user from '../assets/socialLinks.json';
 
 function Home() {
-  document.title = 'My Notebook | Content';
+  document.title = 'My Notebook ';
   let navigate = useNavigate();
   // Particle JS
   const particlesInit = useCallback(async engine => {

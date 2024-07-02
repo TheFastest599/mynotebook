@@ -66,7 +66,7 @@ function Signup() {
       localStorage.setItem('name', json.name);
       localStorage.setItem('email', json.email);
       showAlert('Account Created Successfully', 'success');
-      navigate('/');
+      navigate('/content');
     } else {
       if (json.error) {
         showAlert(json.error, 'danger');
