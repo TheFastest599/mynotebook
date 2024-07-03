@@ -37,7 +37,15 @@ function Noteitem(props) {
               ></button>
             </div>
             <div className="modal-body">
-              <p>{note.description}</p>
+              <textarea
+                rows="5"
+                type="text"
+                className="form-control"
+                id="description"
+                name="description"
+                readOnly
+                value={note.description}
+              />
               <p className="card-text">
                 <small>#{note.tag}</small>
               </p>

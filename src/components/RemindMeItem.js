@@ -44,7 +44,15 @@ function RemindMeItem(props) {
               ></button>
             </div>
             <div className="modal-body">
-              <p>{remindMe.reminder}</p>
+              <textarea
+                rows="4"
+                type="text"
+                className="form-control"
+                id="description"
+                name="description"
+                readOnly
+                value={remindMe.reminder}
+              />
               <p className="card-text">
                 <small>
                   {`Set for : ${dayjs
