@@ -98,7 +98,7 @@ function UpdateNote() {
                     value={note.edescription}
                     onChange={e => {
                       if (
-                        e.target.value.length <= 1000 ||
+                        e.target.value.length <= 5000 ||
                         e.target.value.length < note.edescription.length
                       ) {
                         onChange(e);
@@ -111,7 +111,7 @@ function UpdateNote() {
                     }}
                   />
                   <small className="text-body-secondary">
-                    {note.edescription.length}/1000
+                    {note.edescription.length}/5000
                   </small>
                 </div>
                 <div className="mb-3">
