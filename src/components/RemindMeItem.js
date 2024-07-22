@@ -18,13 +18,13 @@ function RemindMeItem(props) {
 
   const [open, setOpen] = useState(false);
   const toggleModal = () => setOpen(!open);
-  let handleReminder = function () {
-    if (remindMe.reminder.length > 200) {
-      return remindMe.reminder.slice(0, 200) + '...';
-    } else {
-      return remindMe.reminder;
-    }
-  };
+  // let handleReminder = function () {
+  //   if (remindMe.reminder.length > 200) {
+  //     return remindMe.reminder.slice(0, 200) + '...';
+  //   } else {
+  //     return remindMe.reminder;
+  //   }
+  // };
 
   return (
     <div className={`col-md-6 col-lg-4 my-2`}>
@@ -92,12 +92,17 @@ function RemindMeItem(props) {
           <h5 className="card-title"> {remindMe.title}</h5>
           <p
             className="card-text"
+            style={{
+              whiteSpace: 'pre-wrap',
+              height: '100px',
+              overflowY: 'hidden',
+            }}
             id={remindMe._id + 'reminder'}
             onClick={e => {
               setOpen(true);
             }}
           >
-            {handleReminder()}
+            {remindMe.reminder}
           </p>
           <div className="d-flex justify-content-between">
             <div>

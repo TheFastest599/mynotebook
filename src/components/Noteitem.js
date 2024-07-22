@@ -10,13 +10,13 @@ function Noteitem(props) {
   const { note, updateNote, updateBtnId } = props;
   const [open, setOpen] = useState(false);
   const toggleModal = () => setOpen(!open);
-  let handleDesc = function () {
-    if (note.description.length > 200) {
-      return note.description.slice(0, 200) + '...';
-    } else {
-      return note.description;
-    }
-  };
+  // let handleDesc = function () {
+  //   if (note.description.length > 200) {
+  //     return note.description.slice(0, 200) + '...';
+  //   } else {
+  //     return note.description;
+  //   }
+  // };
 
   return (
     <div className={`col-md-6 col-lg-4 my-2`}>
@@ -70,13 +70,19 @@ function Noteitem(props) {
           <h5 className="card-title"> {note.title}</h5>
           <p
             className="card-text"
+            style={{
+              whiteSpace: 'pre-wrap',
+              height: '100px',
+              overflowY: 'hidden',
+            }}
             id={note._id + 'desc'}
             onClick={e => {
               setOpen(true);
             }}
           >
-            {handleDesc()}
+            {note.description}
           </p>
+
           <div className="d-flex justify-content-between">
             <div>
               <svg
